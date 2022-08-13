@@ -2,8 +2,9 @@ package com.zml.wiki.mapper;
 
 import com.zml.wiki.domain.Demo;
 import com.zml.wiki.domain.DemoExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface DemoMapper {
     long countByExample(DemoExample example);

@@ -2,8 +2,9 @@ package com.zml.wiki.mapper;
 
 import com.zml.wiki.domain.Ebook;
 import com.zml.wiki.domain.EbookExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface EbookMapper {
     long countByExample(EbookExample example);

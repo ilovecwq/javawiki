@@ -1,36 +1,33 @@
-package com.zml.wiki.req;
+package com.zml.wiki.resp;
 
-public class PageReq {
-    private int page;
+import java.util.List;
 
-    private int size;
+public class PageResp<T> {
+    private long total;
 
+    private List<T> list;
 
-
-    public int getPage() {
-        return page;
+    public long getTotal() {
+        return total;
     }
 
-    public void setPage(int page) {
-        this.page = page;
+    public void setTotal(long total) {
+        this.total = total;
     }
 
-    public int getSize() {
-        return size;
+    public List<T> getList() {
+        return list;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public void setList(List<T> list) {
+        this.list = list;
     }
-
 
     @Override
     public String toString() {
-        return "PageReq{" +
-                "page=" + page +
-                ", size=" + size +
+        return "PageResp{" +
+                "total=" + total +
+                ", list=" + list +
                 '}';
     }
-    
-
 }

@@ -1,4 +1,4 @@
-package com.jiawa.wiki.config;
+package com.zml.wiki.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;

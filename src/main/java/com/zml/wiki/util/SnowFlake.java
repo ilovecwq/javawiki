@@ -1,4 +1,4 @@
-package com.jiawa.wiki.util;
+package com.zml.wiki.util;
 
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
-package com.jiawa.wiki.controller;
+package com.zml.wiki.controller;
 
-import com.jiawa.wiki.exception.BusinessException;
-import com.jiawa.wiki.resp.CommonResp;
+import com.zml.wiki.exception.BusinessException;
+import com.zml.wiki.resp.CommonResp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;

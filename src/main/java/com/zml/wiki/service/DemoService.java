@@ -1,21 +1,21 @@
 package com.zml.wiki.service;
 
 
-import com.zml.wiki.domain.Test;
-import com.zml.wiki.mapper.TestMapper;
+import com.zml.wiki.domain.Demo;
+import com.zml.wiki.mapper.DemoMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class TestService {
+public class DemoService {
     @Resource
 //    @Autowired
-    private TestMapper testMapper;
+    private DemoMapper demoMapper;
 
-    public List<Test> list(){
-        return testMapper.list();
+    public List<Demo> list(){
+        return demoMapper.selectByExample(null);
     }
 
 }

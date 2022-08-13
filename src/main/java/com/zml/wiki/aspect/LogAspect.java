@@ -1,9 +1,9 @@
-package com.jiawa.wiki.aspect;
+package com.zml.wiki.aspect;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.support.spring.PropertyPreFilters;
-import com.jiawa.wiki.util.RequestContext;
-import com.jiawa.wiki.util.SnowFlake;
+import com.zml.wiki.util.RequestContext;
+import com.zml.wiki.util.SnowFlake;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
@@ -31,11 +31,12 @@ public class LogAspect {
     private final static Logger LOG = LoggerFactory.getLogger(LogAspect.class);
 
     /** 定义一个切点 */
-    @Pointcut("execution(public * com.jiawa.*.controller..*Controller.*(..))")
+    @Pointcut("execution(public * com.zml.*.controller..*Controller.*(..))")
     public void controllerPointcut() {}
 
     @Resource
-    private SnowFlake snowFlake;
+    private
+    SnowFlake snowFlake;
 
     @Before("controllerPointcut()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {

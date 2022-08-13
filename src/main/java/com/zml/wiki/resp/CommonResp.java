@@ -1,4 +1,4 @@
-package com.jiawa.wiki.resp;
+package com.zml.wiki.resp;
 
 public class CommonResp<T> {
 

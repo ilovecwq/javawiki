@@ -1,6 +1,6 @@
 package com.zml.wiki.req;
 
-public class EbookSave {
+public class EbookSaveReq {
     private Long id;
 
     private String name;

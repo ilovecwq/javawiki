@@ -1,22 +1,42 @@
 package com.zml.wiki.controller;
 
-import com.zml.wiki.domain.Demo;
-import com.zml.wiki.service.DemoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.zml.wiki.req.EbookQueryReq;
+import com.zml.wiki.req.EbookSaveReq;
+import com.zml.wiki.resp.CommonResp;
+import com.zml.wiki.resp.EbookResp;
+import com.zml.wiki.resp.PageResp;
+import com.zml.wiki.service.EbookService;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
+import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/demo")
-public class DemoController {
+@RequestMapping("/ebook")
+public class EbookController {
 
     @Resource
-    private DemoService demoService;
+    private EbookService ebookService;
     @GetMapping ("/list")
-    public List<Demo> list(){
-        return demoService.list();
+    public CommonResp list(@Valid EbookQueryReq req){
+        CommonResp<PageResp<EbookResp>> resp = new CommonResp<>();
+        PageResp<EbookResp> list = ebookService.list(req);
+        resp.setContent(list);
+        return resp;
+    }
+
+    @PostMapping  ("/save")
+    public CommonResp save(@RequestBody EbookSaveReq req){
+        CommonResp resp = new CommonResp<>();
+        ebookService.save(req);
+
+        return resp;
+    }
+    @DeleteMapping  ("/delete/{id}")
+    public CommonResp delete(@PathVariable Long id){
+        CommonResp resp = new CommonResp<>();
+        ebookService.delete(id);
+
+        return resp;
     }
 }

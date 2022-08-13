@@ -1,6 +1,6 @@
-package com.zml.wiki.domain;
+package com.zml.wiki.resp;
 
-public class Ebook {
+public class EbookResp {
     private Long id;
 
     private String name;
