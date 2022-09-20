@@ -42,7 +42,7 @@
                              targetPackage="com.zml.wiki.mapper"
                              type="XMLMAPPER"/>
 
-<!--        <table tableName="demo" domainObjectName="Demo"/>-->
+        <table tableName="demo" domainObjectName="Demo"/>
         <table tableName="ebook"/>
         <!--<table tableName="ebook"/>-->
         <!--<table tableName="category"/>-->

@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/demo")
 public class DemoController {
 
-    @Resource
+     @Resource
     private DemoService demoService;
     @GetMapping ("/list")
     public List<Demo> list(){

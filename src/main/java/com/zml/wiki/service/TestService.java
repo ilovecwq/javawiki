@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class TestService {
+public class  TestService {
     @Resource
 //    @Autowired
     private TestMapper testMapper;
