@@ -46,35 +46,22 @@
     <a-layout-content
         :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
     >
-      <a-list item-layout="vertical" size="large" :pagination="pagination" :data-source="listData">
-        <template #footer>
-          <div>
-            <b>ant design vue</b>
-            footer part
-          </div>
-        </template>
+      <a-list item-layout="vertical" size="large" :grid="{ gutter: 20, column: 3 }" :data-source="ebooks">
         <template #renderItem="{ item }">
-          <a-list-item key="item.title">
+          <a-list-item key="item.name">
             <template #actions>
-          <span v-for="{ type, text } in actions" :key="type">
-            <component :is="type" style="margin-right: 8px" />
-            {{ text }}
-          </span>
-            </template>
-            <template #extra>
-              <img
-                  width="272"
-                  alt="logo"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-              />
+              <span v-for="{ type, text } in actions" :key="type">
+                <component :is="type" style="margin-right: 8px" />
+                {{ text }}
+              </span>
             </template>
             <a-list-item-meta :description="item.description">
               <template #title>
-                <a :href="item.href">{{ item.title }}</a>
+                <a :href="item.href">{{ item.name }}</a>
               </template>
-              <template #avatar><a-avatar :src="item.avatar" /></template>
+              <template #avatar><a-avatar :src="item.cover" /></template>
             </a-list-item-meta>
-            {{ item.content }}
+<!--            {{ item.content }}-->
           </a-list-item>
         </template>
       </a-list>
@@ -99,6 +86,8 @@ for (let i = 0; i < 23; i++) {
         'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
   });
 }
+console.log(listData);
+
 export default defineComponent({
   name: 'Home',
 //  通过axios调用电子书列表接口
@@ -112,7 +101,7 @@ export default defineComponent({
       console.log("onMounted");
       axios.get("http://localhost:8880/ebook/list?name=Spring").then((response) => {
         const data = response.data;
-        ebooks.value = data.content;
+        ebooks.value = data.content.list;
         ebooks1.books = data.content;
         console.log(response);
       });
